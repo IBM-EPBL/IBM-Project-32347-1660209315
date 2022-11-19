@@ -1,0 +1,29 @@
+CREATE TABLE users_details (
+id SERIAL NOT NULL PRIMARY KEY ,
+password varchar(50) NOT NULL,
+email varchar(255) NOT NULL,
+name varchar(255) NOT NULL,
+phoneNo  BIGSERIAL NOT NULL,
+address varchar(255) NOT NULL,
+role int NOT NULL,
+
+);
+CREATE TABLE  users(
+  id SERIAL NOT NULL PRIMARY KEY ,
+  details_id int NOT NULL ,
+  plasma id int NOT NULL ,
+created_time timestamp NOT NULL,
+CONSTRAINT user_userDetails FOREIGN KEY(details) REFERENCES users_details(id),
+CONSTRAINT blood _plasme FOREIGN KEY( blood) REFERENCES library(id)
+);
+CREATE TABLE  Entry(
+  id SERIAL NOT NULL PRIMARY KEY ,
+  issue_Date timestamp NOT NULL,
+	returned_Date timestamp ,
+   plama id int NOT NULL ,
+  user_Id int NOT NULL ,
+  status int NOT NULL,
+CONSTRAINT entry_book FOREIGN KEY(book_id ) REFERENCES book_details(id),
+CONSTRAINT entry_user FOREIGN KEY(user_Id) REFERENCES users(id)
+
+);
